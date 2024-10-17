@@ -3,7 +3,7 @@ import { Normalize, LogNorm } from "../my_modules/js-normalize/js-normalize";
 import * as staInfo from "./data/site-total.json";
 import * as point_source from "./data/point_source.json";
 import * as point_source_correct from "./data/point_source_BHT_correct.json"
-import * as country_bht from "./data/country_bht.json"
+// import * as country_bht from "./data/country_bht.json"
 
 var cmap = "jet";
 var reverse = false;
@@ -90,7 +90,7 @@ var gridLayer_winter_nh3_inv = L.vectorGrid.protobuf(
     maxNativeZoom: 11,
     minNativeZoom: 5,
     maxZoom: 22,
-    minZoom: 1,
+    minZoom: 4,
   }
 );
 
@@ -218,15 +218,15 @@ var points_correct = L.geoJSON(point_source_correct, {
   },
 });
 
-var countrys = L.geoJSON(country_bht, {
-  onEachFeature: function (feature, layer) {
-    layer.bindPopup(
-      `
-      ${feature.properties.PAC}, ${feature.properties.NAME}
-      `
-    )
-  }
-})
+// var countrys = L.geoJSON(country_bht, {
+//   onEachFeature: function (feature, layer) {
+//     layer.bindPopup(
+//       `
+//       ${feature.properties.PAC}, ${feature.properties.NAME}
+//       `
+//     )
+//   }
+// })
 
 var osm_map = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
@@ -278,7 +278,7 @@ const overlays = {
   地面站点: station,
   原始点源: points,
   修正点源: points_correct,
-  京津冀区县: countrys,
+  // 京津冀区县: countrys,
 };
 
 //创建地图
