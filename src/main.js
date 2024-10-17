@@ -88,8 +88,9 @@ var gridLayer_winter_nh3_inv = L.vectorGrid.protobuf(
       winter_nh3_inv: vectorTileLayerStyles,
     },
     maxNativeZoom: 11,
+    minNativeZoom: 5,
     maxZoom: 22,
-    // minZoom: 5,
+    minZoom: 1,
   }
 );
 
