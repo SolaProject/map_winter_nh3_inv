@@ -367,8 +367,8 @@ button.onclick = function () {
 function update_layer() {
   update_style_config()
   if (gridLayer_winter_nh3_inv._map) {
-    gridLayer_am.removeFrom(map);
-    gridLayer_am.addTo(map);
+    gridLayer_winter_nh3_inv.removeFrom(map);
+    gridLayer_winter_nh3_inv.addTo(map);
   };
   legend.update();
 }
